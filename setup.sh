@@ -24,7 +24,7 @@ fi
 # ----------------------------
 read -p "install pacman libs? y/n " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
-   ./pacman/get.sh
+   ./pacman/install.sh
 fi
 
 
@@ -42,9 +42,8 @@ fi
 # ----------------------------
 read -p "install golang libs? y/n " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
-   ./go/install.sh
+    ./go/install.sh
 fi
-
 
 # ----------------------------
 # Install zplug (zsh plugin manager)
