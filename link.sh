@@ -11,7 +11,7 @@ do
     #無視したいファイルやディレクトリ
     [ "$f" = ".git" ] && continue
     [ "$f" = ".zshrc" ] && continue
-#    ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
+    ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
 done
 
 echo "link .config directory dotfiles"
