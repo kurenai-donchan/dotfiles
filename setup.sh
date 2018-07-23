@@ -14,7 +14,7 @@ SCRIPT_DIR=$(cd $(dirname $0);pwd)
 read -p "copy dotfiles and symlink? y/n " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
    echo " --copy DOTFILES ${SCRIPT_DIR} => ~/dotfiles"
-   cp -rf ${SCRIPT_DIR} ~/dotfiles
+   \cp -rf ${SCRIPT_DIR} ~/dotfiles
    ./link.sh
 fi
 
