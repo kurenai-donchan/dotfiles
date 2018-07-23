@@ -2,10 +2,6 @@
 
 This repository is MY PERSONAL dotfiles.
 
-"C:\git-sdk-64\usr\bin\bash.exe"
-
-set MSYSTEM=MINGW64 & "C:\git-sdk-64\usr\bin\bash.exe" --login -i
-
 ### Install apps
  - [chocolatey](https://chocolatey.org/install)
 ```
@@ -13,7 +9,6 @@ set MSYSTEM=MINGW64 & "C:\git-sdk-64\usr\bin\bash.exe" --login -i
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 ```
- - [msys2](http://www.msys2.org/)
  - [GIT for Windows sdk](https://github.com/git-for-windows/build-extra/releases)
 
 ### Install cmder portable (without git for windows etc.)
@@ -25,27 +20,24 @@ choco install -y cmdermini.portable
 #### option
  - change environment variables
 ```
-HOME=C:\Users\ts-takao.a.fukuoka\UnixHome
+HOME=C:\Users\%USERNAME%\UnixHome
 ```
 
+### setting cmder
  - [Keys & Macro] タブ内の 「[InSelection] Copy: Current selection as plain text: Copy(0,0)」の[Choose hotkey] を「なし」にする。
  - [Keys & Macro] タブ内の 「Paste first line of clipboard contents, autoconvert paths…」の[Choose hotkey] を「なし」にする。
-
-
-### setting cmder
  - Main -> [change fonts]
  - Main -> [monospace] unchecked
  - Main -> Tab bar -> [Tabs on bottom] unchecked
- - Startup -> Tasks -> Add/refresh... 
-    -> [Bash::Msys2-64] Select
+ - Startup -> Tasks -> [+]
+    -> [Title] Git for Windows SDK
+    -> [Task parameter] /icon "C:\git-sdk-64\usr\bin\bash.exe"
+    -> [Commands] cd %HOME% & "C:\git-sdk-64\usr\bin\bash.exe" --login -i
  - Startup -> Specifed named task
-    -> [Bash::Msys2-64] Select
-  - Commands の枠に下記設定
-```
-set CHERE_INVOKING=1 & set MSYS2_PATH_TYPE=inherit & set "PATH=%ConEmuDrive%\msys64\usr\bin;%PATH%" & cd %HOME% & %ConEmuBaseDirShort%\conemu-msys2-64.exe -new_console:p %ConEmuDrive%\msys64\usr\bin\bash.exe --login -i -new_console:C:"%ConEmuDrive%\msys64\msys2.ico"
-```
+    -> [Git for Windows SDK] Select
 
-### update msys2
+### update pacman
+(open cmder)
 ```
 pacman -Syu
 # if exit, retry this comand
@@ -74,11 +66,11 @@ pacman -S --noconfirm git
 ### Setup
 ```
 mkdir ~/src && cd ~/src
-git clone https://ts-takao.a.fukuoka@git.rakuten-it.com/scm/~ts-takao.a.fukuoka/dotfiles.git
+git clone ${this repository}
 cp -r dotfiles ~/dotfiles
 cd dotfiles
 
-# symlink support
+# symlink support for windows
 export MSYS=winsymlinks:nativestrict
 
 # start setup
