@@ -78,25 +78,10 @@ git clone https://ts-takao.a.fukuoka@git.rakuten-it.com/scm/~ts-takao.a.fukuoka/
 cp -r dotfiles ~/dotfiles
 cd dotfiles
 
+# symlink support
+export MSYS=winsymlinks:nativestrict
+
 # start setup
 ./setup.sh
 ```
-
-
-### Setup
-
-```bash
-$ git clone https://github.com/togatoga/dotfiles
-$ cp -r dotfiles ~/dotfiles
-$ cd dotfiles
-$ ./setup.sh
-
-
-```
-
-### Link 
-```bash
-
-```
-
 
