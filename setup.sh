@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
+# ŽÀsêŠ‚ð‚«‚É‚µ‚È‚¢‚æ‚¤‚É‚·‚é
+cd `dirname $0`
+
 echo "  Hello $USER\n"
 
 echo "  im dotfiles. oh...How cute this :)"
 echo "  To install, please tap 'y' or 'n' key\n"
 
-# change dir
+# .../dotfiles
 SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P) 
 
 # ----------------------------
@@ -14,6 +17,7 @@ SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P)
 read -p "copy dotfiles and symlink? y/n " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
    echo " --copy DOTFILES ${SCRIPT_DIR} => ~/dotfiles"
+   rm -rf ~/dotfiles
    \cp -rf ${SCRIPT_DIR} ~/dotfiles
    ./link.sh
 fi
