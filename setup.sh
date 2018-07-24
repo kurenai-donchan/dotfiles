@@ -6,7 +6,7 @@ echo "  im dotfiles. oh...How cute this :)"
 echo "  To install, please tap 'y' or 'n' key\n"
 
 # change dir
-SCRIPT_DIR=$(cd $(dirname $0);pwd)
+SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P) 
 
 # ----------------------------
 # copy dotfiles and create symlink

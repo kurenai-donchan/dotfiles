@@ -27,8 +27,9 @@ alias today="date +%Y%m%d"
 ################################
 # Shortcuts
 ################################
-alias dt="cd ~/Desktop"
-alias dl="cd ~/Downloads"
+alias dt="cd ~/../Desktop"
+alias dl="cd ~/../Downloads"
+alias dm="cd ~/../Documents"
 
 
 ################################

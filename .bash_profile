@@ -1,6 +1,6 @@
 # include .bash_alias
 if [ -f ~/.bash_alias ]; then
-. ~/.bash_function
+. ~/.bash_alias
 fi
 
 # include .bash_function
