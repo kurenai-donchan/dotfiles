@@ -1,11 +1,26 @@
-# export
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
-export MSYS=winsymlinks:nativestrict
-export DOTPATH=~/dotfiles
+######################################################
+# Read .bash_function
+######################################################
+if [ -f ~/.bash_function ]; then
+  source ~/.bash_function
+fi
 
-# read peco
-. ~/.peco/*.sh
+
+######################################################
+# Read .bash_alias
+######################################################
+if [ -f ~/.bash_alias ]; then
+  source ~/.bash_alias
+fi
+
+
+######################################################
+# Read peco funcitons
+######################################################
+if [ -d ~/.peco ]; then
+  source ~/.peco/*.sh
+fi
+
 
 # Read company setting zsh
 #if [ -e ~/company ];then

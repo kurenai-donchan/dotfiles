@@ -1,18 +1,11 @@
 ################################
+# Aliases for MSYS2 bash
+# alias hogeを一時的に無効にするには\hoge
+################################
+
+################################
 # Basic
 ################################
-alias reload='exec $SHELL -l'
-alias path='echo $PATH | tr -s ":" "\n"'
-alias ks="ls"
-alias sl="ls"
-alias ls="ls --color -F"
-alias l="ls"
-alias ll="ls -l"
-alias la="ls -a"
-alias mv="mv -i"
-alias cp="cp -i"
-alias g="git"
-
 alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
@@ -21,8 +14,42 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
 
-alias ccat="ccat --color=always --bg=dark"
-alias today="date +%Y%m%d"
+
+# lsを使いやすく
+alias ls="ls --color=auto --show-control-chars --time-style=long-iso -FH"
+alias ll="ls -la"
+alias la="ls -a"
+alias ks="ls"
+alias sl="ls"
+
+# 設定の読み込み
+alias reload="exec $SHELL -l"
+
+# 画面消去
+alias c=clear
+alias cls=reset
+
+# for windows 
+alias dir=ll
+alias path='echo $PATH | tr -s ":" "\n"'
+
+# ディスクサイズ
+alias df='df -h'
+alias du='du -h'
+alias du1='du -d1'
+
+# grep
+# grep -r hogeで./以下のファイルの中身からhogeを検索
+# find | grep hogeで./以下のファイル名からhogeを検索
+# whereis hogeでコマンドの関連場所を検索(bin, src, man)
+# type -a hogeでコマンドを検索
+alias grep='grep --color'
+
+# other
+alias mv="mv -i"
+alias cp="cp -i"
+alias g="git"
+
 
 ################################
 # Shortcuts
@@ -30,7 +57,7 @@ alias today="date +%Y%m%d"
 alias dt="cd ~/../Desktop"
 alias dl="cd ~/../Downloads"
 alias dm="cd ~/../Documents"
-
+alias gr="cd '`ghq root`'"
 
 ################################
 # Advanced
@@ -38,3 +65,6 @@ alias dm="cd ~/../Documents"
 
 # weather
 alias wx="curl -4 wttr.in/Tokyo"
+alias ccat="ccat --color=always --bg=dark"
+alias today="date +%Y%m%d"
+
