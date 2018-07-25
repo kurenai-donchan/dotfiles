@@ -1,5 +1,5 @@
 [include]
-	path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
 [color]
   status = auto
   diff = auto
@@ -59,8 +59,25 @@
   alias  = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ => \\2/' | sort
   ignore = "!f() { echo $1 >> \"${GIT_PREFIX}.gitignore\";  }; f"
   push-fwl = push --force-with-lease
+
 [ghq]
-    root = ~/src
+  root = ~/src
+
+[push]
+  default = current
+
+[url "git@github.com:"]
+   insteadOf = https://github.com/
+
+[core]
+  excludesfile = ~/.gitignore_global
+  escludesfile = ~/.gitignore_local
+  autocrlf     = false
+
+[credential]
+  helper = manager
+
+# Others
 #[diff]
 #  tool = meld
 #[difftool "meld"]
@@ -69,13 +86,3 @@
 #  tool = meld
 #[mergetool "meld"]
 #    cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
-[push]
-	default = current
-#[url "git@github.com:"]
-#   insteadOf = https://github.com/
-[core]
-	excludesfile = ~/.gitignore_global
-	escludesfile = ~/.gitignore_local
-	autocrlf     = false
-[credential]
-	helper = cache --timeout=2628000
