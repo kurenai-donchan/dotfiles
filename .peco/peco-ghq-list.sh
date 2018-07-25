@@ -1,5 +1,5 @@
 # Change directory to the repo where fetched by peco
-function _peco-ghql() {
+function _peco-ghq-list() {
   local selected_dir=$(ghq list --full-path | peco --prompt '[repo]' --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     if [ -t 1 ]; then
@@ -9,4 +9,4 @@ function _peco-ghql() {
     fi
   fi
 }
-bind -x '"\C-]": _peco-ghql'
+bind -x '"\C-]": _peco-ghq-list'

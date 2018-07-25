@@ -1,6 +1,6 @@
 ################################
 # Aliases for MSYS2 bash
-# alias hoge���ꎞ�I�ɖ����ɂ���ɂ�\hoge
+# alias hogeを一時的に無効にするには\hoge
 ################################
 
 ################################
@@ -15,35 +15,33 @@ alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
 
 
-# ls���g���₷��
+# lsを使いやすく
 alias ls="ls --color=auto --show-control-chars --time-style=long-iso -FH"
 alias ll="ls -la"
 alias la="ls -a"
 alias ks="ls"
 alias sl="ls"
 
-# �ݒ�̓ǂݍ���
+# 設定の読み込み
 alias reload="exec $SHELL -l"
 
-# ��ʏ���
+# 画面消去
 alias c=clear
 alias cls=reset
 
-# for windows 
-alias dir=ll
-alias path='echo $PATH | tr -s ":" "\n"'
-
-# �f�B�X�N�T�C�Y
+# ディスクサイズ
 alias df='df -h'
 alias du='du -h'
 alias du1='du -d1'
 
 # grep
-# grep -r hoge��./�ȉ��̃t�@�C���̒��g����hoge������
-# find | grep hoge��./�ȉ��̃t�@�C��������hoge������
-# whereis hoge�ŃR�}���h�̊֘A�ꏊ������(bin, src, man)
-# type -a hoge�ŃR�}���h������
+# grep -r hogeで./以下のファイルの中身からhogeを検索
+# find | grep hogeで./以下のファイル名からhogeを検索
+# whereis hogeでコマンドの関連場所を検索(bin, src, man)
+# type -a hogeでコマンドを検索
 alias grep='grep --color'
+alias gr='grep'
+alias gn='grep -n'
 
 # other
 alias mv="mv -i"
@@ -52,12 +50,21 @@ alias g="git"
 
 
 ################################
+# for windows
+################################
+alias dir=ll
+alias path='echo $PATH | tr -s ":" "\n"'
+alias open="start"
+
+
+################################
 # Shortcuts
 ################################
 alias dt="cd ~/../Desktop"
 alias dl="cd ~/../Downloads"
 alias dm="cd ~/../Documents"
-alias gr="cd '`ghq root`'"
+alias csrc="cd '`ghq root`'"
+
 
 ################################
 # Advanced
@@ -67,7 +74,6 @@ alias gr="cd '`ghq root`'"
 alias wx="curl -4 wttr.in/Tokyo"
 alias ccat="ccat --color=always --bg=dark"
 alias today="date +%Y%m%d"
-
 
 
 ################################

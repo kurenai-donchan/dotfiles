@@ -14,6 +14,7 @@ do
     #無視したいファイルやディレクトリ
     [ "$f" = ".git" ] && continue
     [ "$f" = ".zshrc" ] && continue
+    [ "$f" = ".idea" ] && continue
     ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
 done
 
