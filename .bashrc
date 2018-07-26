@@ -26,23 +26,22 @@ fi
 
 
 ######################################################
-# Path controll èdï°PATHÇÇ≥ÇØÇÈ
+# Read private setting sh
 ######################################################
-_path=""
-for _p in $(echo $PATH | tr ':' ' '); do
-  case ":${_path}:" in
-    *:"${_p}":* )
-      ;;
-    * )
-      if [ "$_path" ]; then
-        _path="$_path:$_p"
-      else
-        _path=$_p
-      fi
-      ;;
-  esac
-done
-PATH=$_path
+if [ -d ~/.private ]; then
+  for f in ~/.private/*.sh
+  do
+    source $f
+  done
+fi
 
-unset _p
-unset _path
+######################################################
+# Read company setting sh
+######################################################
+if [ -d ~/company ];then
+  for f in ~/.company/*.sh
+  do
+    source $f
+  done
+fi
+
