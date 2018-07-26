@@ -5,7 +5,6 @@ function _peco-ghq-list() {
     if [ -t 1 ]; then
       echo ${selected_dir}
       cd ${selected_dir}
-      clear
     fi
   fi
 }

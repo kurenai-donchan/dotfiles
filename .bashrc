@@ -18,15 +18,31 @@ fi
 # Read peco funcitons
 ######################################################
 if [ -d ~/.peco ]; then
-  source ~/.peco/*.sh
+  for f in ~/.peco/*.sh
+  do
+    source $f
+  done
 fi
 
 
-# Read company setting zsh
-#if [ -e ~/company ];then
-#	for f (~/company/utils/*.sh) source "${f}"
-#fi
+######################################################
+# Path controll èdï°PATHÇÇ≥ÇØÇÈ
+######################################################
+_path=""
+for _p in $(echo $PATH | tr ':' ' '); do
+  case ":${_path}:" in
+    *:"${_p}":* )
+      ;;
+    * )
+      if [ "$_path" ]; then
+        _path="$_path:$_p"
+      else
+        _path=$_p
+      fi
+      ;;
+  esac
+done
+PATH=$_path
 
-# Read common setting sh TODO 
-# for f ($DOTPATH/.*/*.sh) source "${f}"
-
+unset _p
+unset _path

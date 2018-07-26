@@ -1,6 +1,50 @@
+# wincmdをcmderで打てるよう定義
 function wincmd()
 {
     CMD=$1
     shift
     $CMD $* 2>&1 | iconv -f CP932 -t UTF-8
 }
+
+
+# 履歴を記録するcdの再定義（pushdの利用）
+function cd {
+    if [ -z "$1" ] ; then
+        # cd 連打で余計な $DIRSTACK を増やさない
+        test "$PWD" != "$HOME" && pushd $HOME > /dev/null
+    else
+	pushd "$1" > /dev/null
+	chpwd
+    fi  
+}
+
+# ディレクトリ移動後自動でls -lahする
+# ただしファイルなどが20より多かった場合はlsで簡易表示
+# cdコマンドの後で実行
+function chpwd() {
+  pwd >> ~/.dir_history
+  if [ 20 -gt `ls -1 | wc -l` ]; then
+    ls -lah
+    pwd
+  else
+    ls
+    pwd
+  fi
+}
+
+
+# cdの履歴の中から移動したいディレクトリを選択するcd historyの定義
+function cdh {
+    local dirnum
+    dirs -v | sort -k 2 | uniq -f 1 | sort -n -k 1 | head -n $(( LINES - 3 ))
+    read -p "select number: " dirnum
+    if [ -z "$dirnum" ] ; then
+        echo "$FUNCNAME: Abort." 1>&2
+    elif ( echo $dirnum | egrep '^[[:digit:]]+$' > /dev/null ) ; then
+        cd "$( echo ${DIRSTACK[$dirnum]} | sed -e "s;^~;$HOME;" )"
+    else
+        echo "$FUNCNAME: Wrong." 1>&2
+    fi
+}
+
+

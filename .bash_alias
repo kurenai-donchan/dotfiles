@@ -77,6 +77,12 @@ alias today="date +%Y%m%d"
 
 
 ################################
+# InteliJ
+################################
+alias ij.="intelij.exe `pwd`"
+
+
+################################
 # Docker aliases
 ################################
 
@@ -120,3 +126,10 @@ alias dclean='docker kill $(docker ps --all --quiet); drm; drmi;'
 
 # List all aliases relating to docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)='\(.*\)'/\1    => \2/"| sed "s/'\\\'//g"; }
+
+# -----
+# docker-compose 
+# -----
+alias dc='docker-compose'
+alias dcupd='docker-compose up -d'
+
