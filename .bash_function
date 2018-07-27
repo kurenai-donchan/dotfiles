@@ -42,3 +42,9 @@ function cdl() {
   fi
 }
 
+# git pull under direcotrys
+function git_pulls(){
+   for path in `find $(pwd) -name ".git" |  sed "s#/.git#/#"`; do echo "$path => "; git -C ${path} pull; done
+}
+
+
