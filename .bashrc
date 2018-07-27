@@ -29,16 +29,17 @@ fi
 # Read private setting sh
 ######################################################
 if [ -d ~/.private ]; then
-  for f in ~/.private/*.sh
+  for f in ~/private/*.sh
   do
     source $f
   done
 fi
 
+
 ######################################################
 # Read company setting sh
 ######################################################
-if [ -d ~/company ];then
+if [ -d ~/.company ];then
   for f in ~/.company/*.sh
   do
     source $f

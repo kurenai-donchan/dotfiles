@@ -55,6 +55,7 @@ alias g="git"
 alias dir=ll
 alias path='echo $PATH | tr -s ":" "\n"'
 alias open="start"
+alias o="start"
 
 
 ################################
@@ -79,7 +80,7 @@ alias today="date +%Y%m%d"
 ################################
 # InteliJ
 ################################
-alias ij.="intelij.exe `pwd`"
+alias ij.="intelij.exe \`pwd\`"
 
 
 ################################
