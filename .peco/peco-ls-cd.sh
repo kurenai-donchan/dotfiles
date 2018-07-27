@@ -5,4 +5,4 @@ function _peco-ls-cd {
         cd "$dir"
     fi
 }
-alias cdl=_peco-ls-cd
+alias cdp=_peco-ls-cd
