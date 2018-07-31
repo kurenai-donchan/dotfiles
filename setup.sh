@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# ���s�ꏊ�����ɂ��Ȃ��悤�ɂ���
+# 実行場所をきにしないようにする
 cd `dirname $0`
 
 echo "  Hello $USER\n"

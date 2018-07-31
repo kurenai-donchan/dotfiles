@@ -40,7 +40,7 @@ fi
 # Read company setting sh
 ######################################################
 if [ -d ~/.company ];then
-  for f in ~/.company/*.sh
+  for f in ~/.company/.util/*.sh
   do
     source $f
   done

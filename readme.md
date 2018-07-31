@@ -58,17 +58,15 @@ pacman -Syu
 1. pacman -Si [package]で詳しい情報を表示。
 1. pacman -Scで使っていないキャッシュを削除。
 
-### Install Git
-```
-pacman -S --noconfirm git
-```
 
 ### Setup
 ```
 mkdir ~/src && cd ~/src
-git clone ${this repository}
+
+# default git-sdk-64 bin
+/c/git-sdk-64/mingw64/bin/git clone ${this repository}
 cp -r dotfiles ~/dotfiles
-cd dotfiles
+cd ~/src/dotfiles
 
 # symlink support for windows
 export MSYS=winsymlinks:nativestrict
@@ -76,4 +74,9 @@ export MSYS=winsymlinks:nativestrict
 # start setup
 ./setup.sh
 ```
+
+### reopen console
+
+Enjoy console. development.
+
 
