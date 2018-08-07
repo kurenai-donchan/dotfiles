@@ -10,12 +10,16 @@ This repository is MY PERSONAL dotfiles.
 
 ```
  - [GIT for Windows sdk](https://github.com/git-for-windows/build-extra/releases)
+ - chocolatey にないAPPは素直にInstaller等を使う
+ - chocolatey にあっても [Possible borken] と出て壊れている可能性があるのも素直にInstaller等を使う
+
 
 ### Install cmder portable (without git for windows etc.)
  - Run the following command
 ```
 choco install -y cmdermini.portable
 ```
+
 
 #### option
  - change environment variables

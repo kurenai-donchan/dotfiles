@@ -21,6 +21,7 @@ alias ll="ls -la"
 alias la="ls -a"
 alias ks="ls"
 alias sl="ls"
+alias w="which"
 
 # 設定の読み込み
 alias reload="exec $SHELL -l"
