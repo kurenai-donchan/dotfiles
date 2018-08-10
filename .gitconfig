@@ -63,9 +63,6 @@
 [ghq]
   root = ~/src
 
-[push]
-  default = current
-
 [url "git@github.com:"]
    insteadOf = https://github.com/
 
@@ -74,9 +71,8 @@
   escludesfile = ~/.gitignore_local
   autocrlf     = false
 
-[credential]
-  helper = manager
-
+#[credential]
+#  helper = manager
 # Others
 #[diff]
 #  tool = meld
