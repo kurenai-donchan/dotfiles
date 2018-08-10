@@ -21,19 +21,22 @@ alias ll="ls -la"
 alias la="ls -a"
 alias ks="ls"
 alias sl="ls"
-alias w="which"
+
 
 # 設定の読み込み
 alias reload="exec $SHELL -l"
+
 
 # 画面消去
 alias c=clear
 alias cls=reset
 
+
 # ディスクサイズ
 alias df='df -h'
 alias du='du -h'
 alias du1='du -d1'
+
 
 # grep
 # grep -r hogeで./以下のファイルの中身からhogeを検索
@@ -44,7 +47,9 @@ alias grep='grep --color'
 alias gr='grep'
 alias gn='grep -n'
 
+
 # other
+alias w="which"
 alias mv="mv -i"
 alias cp="cp -i"
 alias g="git"
@@ -90,11 +95,11 @@ alias ij.="intelij.exe \`pwd\`"
 
 alias d="docker"
 
-# Get the latest container ID
-alias dl="docker ps --latest --quiet"
-
 # List containers
 alias dps="docker ps"
+
+# Get the latest container ID
+alias dpl="docker ps --latest --quiet"
 
 # List containers including stopped containers
 alias dpa="docker ps --all"
@@ -129,9 +134,9 @@ alias dclean='docker kill $(docker ps --all --quiet); drm; drmi;'
 # List all aliases relating to docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)='\(.*\)'/\1    => \2/"| sed "s/'\\\'//g"; }
 
-# -----
-# docker-compose 
-# -----
+# docker-compose
 alias dc='docker-compose'
+
+# docker-compose up deamon
 alias dcupd='docker-compose up -d'
 

@@ -6,25 +6,15 @@
 #  FYI:https://www.lfd.uci.edu/~gohlke/pythonlibs/
 #
 
-echo "-- Start Install python lib --"
+echo "-- Start Install python lib using pip --"
 
-# install pip
-if type easy_install > /dev/null 2>&1; then
-  easy_install pip
-else
-  echo "None easy_install"
-  exit
-fi
-
-
-pushd /tmp
-
-# curl -O "https://download.lfd.uci.edu/pythonlibs/l8ulg3xw/lxml-4.2.3-cp36-cp36m-win32.whl" 
+#### upgrade pip
+python -m pip install --upgrade pip
 
 LIBS=(
-   wheel
-   lxml-4.2.3-cp36-cp36m-win32.whlaaa
-
+   requests
+   lxml
+   cssselect
 )
 
 echo "...install pip lib...\n"
@@ -32,7 +22,4 @@ for LIB in ${LIBS[@]}
 do
     pip install $LIB
 done
-
-# 戻る
-popd
 

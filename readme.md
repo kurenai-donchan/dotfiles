@@ -13,6 +13,29 @@ This repository is MY PERSONAL dotfiles.
  - chocolatey にないAPPは素直にInstaller等を使う
  - chocolatey にあっても [Possible borken] と出て壊れている可能性があるのも素直にInstaller等を使う
 
+### python install using installer
+・python のinstallはpacman経由とかだとGccとかlxmlのinstallなどに失敗するので
+インストラーを使用する
+
+https://www.python.org/downloads/release/python-361/
+Windows x86-64 executable installer
+
+ 1. check [Add ... PATH]
+ 2. Go to Customize Installation
+ 3. Go to Next
+ 4. check [Install for all Users]
+ 5. Go to Install
+
+check python path
+```
+$ which python
+/c/Program Files/Python36/python
+
+$ which pip
+/c/Program Files/Python36/Scripts/pip
+```
+
+※Git for Windows SDKにもpythonが入っているが使わない
 
 ### Install cmder portable (without git for windows etc.)
  - Run the following command
@@ -40,7 +63,7 @@ HOME=C:\Users\%USERNAME%\UnixHome
  - Startup -> Specifed named task
     -> [Git for Windows SDK] Select
 
-### update pacman
+### update-core pacman version
 (open cmder)
 ```
 pacman -Syu
