@@ -49,6 +49,16 @@ if [ $yn = "y" -o $yn = "Y" ]; then
     ./go/install.sh
 fi
 
+
+# ----------------------------
+# Install python libs
+# ----------------------------
+read -p "install python libs? y/n " yn
+if [ $yn = "y" -o $yn = "Y" ]; then
+   ./python/install.sh
+fi
+
+
 # ----------------------------
 # Install zplug (zsh plugin manager)
 # ----------------------------

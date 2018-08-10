@@ -6,13 +6,6 @@
 
 echo "-- Start pacman libs --"
 
-# install pip
-if type pip > /dev/null 2>&1; then
-  echo "Please Install pip"
-  exit
-fi
-
-
 PACMAN_LIBS=(
         vim
         zsh

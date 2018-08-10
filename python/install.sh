@@ -8,6 +8,12 @@
 
 echo "-- Start Install python lib using pip --"
 
+# install pip
+if ! type pip > /dev/null 2>&1; then
+  echo "Please Install pip"
+  exit
+fi
+
 #### upgrade pip
 python -m pip install --upgrade pip
 
