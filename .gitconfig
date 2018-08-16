@@ -60,6 +60,11 @@
   ignore = "!f() { echo $1 >> \"${GIT_PREFIX}.gitignore\";  }; f"
   push-fwl = push --force-with-lease
 
+  # pull all
+  pulls = "!f(){ for path in $(find $(pwd) -name \".git\" ); do echo \"${path%.git} => \"; git -C ${path%.git} pull; done;};f"
+  # under directory commands
+  cd  = "!f(){ for path in $(find $(pwd) -name \".git\" ); do echo \"${path%.git} => \"; echo git -C ${path%.git} $1 $2; done;};f"
+
 [ghq]
   root = ~/src
 
@@ -67,8 +72,6 @@
    insteadOf = https://github.com/
 
 [core]
-  excludesfile = ~/.gitignore_global
-  escludesfile = ~/.gitignore_local
   autocrlf     = false
 
 #[credential]
