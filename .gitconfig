@@ -1,5 +1,3 @@
-[include]
-  path = ~/.gitconfig.local
 [color]
   status = auto
   diff = auto
@@ -63,7 +61,7 @@
   # pull all
   pulls = "!f(){ for path in $(find $(pwd) -name \".git\" ); do echo \"${path%.git} => \"; git -C ${path%.git} pull; done;};f"
   # under directory commands
-  cd  = "!f(){ for path in $(find $(pwd) -name \".git\" ); do echo \"${path%.git} => \"; echo git -C ${path%.git} $1 $2; done;};f"
+  each  = "!f(){ for path in $(find $(pwd) -name \".git\" ); do echo \"${path%.git} => \"; echo git -C ${path%.git} $1 $2; done;};f"
 
 [ghq]
   root = ~/src
@@ -72,7 +70,7 @@
    insteadOf = https://github.com/
 
 [core]
-  autocrlf     = false
+  autocrlf = input
 
 #[credential]
 #  helper = manager
