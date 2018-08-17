@@ -71,6 +71,12 @@
 
 [core]
   autocrlf = input
+  excludesfile = ~/.gitconfig.global
+
+
+# for compnay .git
+[includeIf "gitdir:~/src/*-it.com/"]
+  path = ~/.company/.gitconfig.company
 
 #[credential]
 #  helper = manager

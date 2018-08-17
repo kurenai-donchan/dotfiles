@@ -4,6 +4,7 @@ function _peco-ghq-list() {
   if [ -n "$selected_dir" ]; then
     if [ -t 1 ]; then
       cd "${selected_dir}"
+      echo "cd ${selected_dir}"
     fi
   fi
 }

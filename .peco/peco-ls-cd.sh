@@ -1,8 +1,9 @@
-# “ú–{Œê‚ÌƒfƒBƒŒƒNƒgƒŠ‚Æ‚©‚Å“ü—Í‚ª‚¾‚é‚¢‚Æ‚«‚ÉƒŠƒXƒg‚©‚çƒZƒŒƒNƒg‚·‚é
+# æ—¥æœ¬èªã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¨ã‹ã§å…¥åŠ›ãŒã ã‚‹ã„ã¨ãã«ãƒªã‚¹ãƒˆã‹ã‚‰ã‚»ãƒ¬ã‚¯ãƒˆã™ã‚‹
 function _peco-ls-cd {
     local dir="$( ls | peco --prompt '[Current list]' )"
     if [ ! -z "$dir" ] ; then
         cd "$dir"
+        echo "cd ${dir}"
     fi
 }
 alias cdp=_peco-ls-cd
