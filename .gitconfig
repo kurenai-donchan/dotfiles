@@ -63,6 +63,22 @@
   # under directory commands
   each  = "!f(){ for path in $(find $(pwd) -name \".git\" ); do echo \"${path%.git} => \"; echo git -C ${path%.git} $1 $2; done;};f"
 
+  # git checkout with peco
+  cop = !git branch \
+      | peco --prompt '<GIT Checkout Local Branch>' \
+      | head -n 1 \
+      | sed \"s/^\\*\\s*//\" \
+      | xargs git checkout
+
+  # git checkout -b from remote with peco
+  corp = !git branch -a \
+       | peco --query 'remotes/' --prompt '<GIT Checkout -B Remote Branch>' \
+       | head -n 1 \
+       | sed 's/^\\*\\s*//' \
+       | sed 's/remotes\\/[^\\/]*\\/\\(\\S*\\)/\\1 \\0/' \
+       | xargs git checkout -b
+
+
 [ghq]
   root = ~/src
 
