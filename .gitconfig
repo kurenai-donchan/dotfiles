@@ -93,6 +93,9 @@
   autocrlf = input
   excludesfile = ~/.gitconfig.global
 
+# for github
+[includeIf "gitdir:~/src/github.com/"]
+  path = ~/.gitconfig.local
 
 # for compnay .git
 [includeIf "gitdir:~/src/*-it.com/"]
