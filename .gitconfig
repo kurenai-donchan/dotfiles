@@ -91,7 +91,7 @@
 
 [core]
   autocrlf = input
-  excludesfile = ~/.gitconfig.global
+#  excludesfile = ~/.gitconfig.global
 
 # for github
 [includeIf "gitdir:~/src/github.com/"]
