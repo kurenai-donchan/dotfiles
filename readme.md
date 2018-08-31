@@ -102,6 +102,15 @@ export MSYS=winsymlinks:nativestrict
 ./setup.sh
 ```
 
+### And Manual symlink
+example choco
+```
+$ /c/ProgramData/chocolatey/bin
+go.exe -> /c/tools/go/bin/go.exe*
+mpv.exe -> /c/ProgramData/chocolatey/lib/mpv.install/tools/mpv.exe*
+
+```
+
 ### reopen console
 
 Enjoy console. development.
