@@ -90,8 +90,7 @@
    insteadOf = https://github.com/
 
 [core]
-  autocrlf = input
-#  excludesfile = ~/.gitconfig.global
+  autocrlf = false
 
 # for github
 [includeIf "gitdir:~/src/github.com/"]
@@ -101,9 +100,9 @@
 [includeIf "gitdir:~/src/*-it.com/"]
   path = ~/.company/.gitconfig.company
 
+# Others
 #[credential]
 #  helper = manager
-# Others
 #[diff]
 #  tool = meld
 #[difftool "meld"]
