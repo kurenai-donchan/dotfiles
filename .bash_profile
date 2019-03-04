@@ -14,16 +14,6 @@ export HISTCONTROL=ignorespace:ignoredups:erasedups
 export HISTIGNORE=cd:ls:pwd:exit
 export HISTSIZE=10000
 
-
-######################################################
-# docker-machine env
-######################################################
-if type docker-machine 2>/dev/null 1>/dev/null 
-then
-    eval $(docker-machine env)
-fi
-
-
 ######################################################
 # include .bashrc
 ######################################################
