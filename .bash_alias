@@ -102,7 +102,7 @@ alias dm="docker-machine"
 alias dc='docker-compose'
 
 # docker-machine env
-alias denv="eval $(docker-machine env default)"
+# alias denv="eval $(docker-machine env default)"
 
 # Docker Useful commands
 # List containers
